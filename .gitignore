@@ -1,0 +1,14 @@
+# Ignore local configuration
+config.php
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE settings
+.vscode/
+.idea/
+
+# Deployment workflow logs
+.github/workflows/*.local
