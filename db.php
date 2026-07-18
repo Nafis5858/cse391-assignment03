@@ -1,10 +1,14 @@
 <?php
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
-$host = getenv('DB_HOST') ?: 'localhost';
-$dbName = getenv('DB_NAME') ?: 'car_workshop';
-$dbUser = getenv('DB_USER') ?: 'root';
-$dbPass = getenv('DB_PASS') ?: '';
+if (file_exists(__DIR__ . '/config.php')) {
+    require_once __DIR__ . '/config.php';
+}
+
+$host = isset($dbHost) ? $dbHost : (getenv('DB_HOST') ?: 'localhost');
+$dbName = isset($dbName) ? $dbName : (getenv('DB_NAME') ?: 'car_workshop');
+$dbUser = isset($dbUser) ? $dbUser : (getenv('DB_USER') ?: 'root');
+$dbPass = isset($dbPass) ? $dbPass : (getenv('DB_PASS') ?: '');
 
 $conn = new mysqli($host, $dbUser, $dbPass);
 

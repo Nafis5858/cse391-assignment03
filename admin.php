@@ -67,7 +67,6 @@ $mechanics = getMechanicsWithAvailability($conn, $selectedDateForMechanics);
         <nav>
             <a href="index.php">Book Appointment</a>
             <a href="admin.php">Admin Panel</a>
-            <a href="help.php">Help</a>
         </nav>
     </header>
 
