@@ -1,0 +1,110 @@
+:root {
+    color-scheme: light;
+    font-family: Arial, Helvetica, sans-serif;
+    --primary: #0f4c81;
+    --accent: #f59e0b;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --bg: #f7f9fc;
+    --card: #ffffff;
+    --success: #16a34a;
+    --error: #dc2626;
+}
+
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+}
+
+a { color: var(--primary); text-decoration: none; }
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 32px;
+    background: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+.brand {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+nav { display: flex; gap: 16px; }
+.container { max-width: 1100px; margin: 0 auto; padding: 24px 20px 48px; }
+.hero {
+    background: linear-gradient(135deg, var(--primary), #1d4ed8);
+    color: white;
+    padding: 32px;
+    border-radius: 16px;
+    margin-bottom: 24px;
+}
+.panel {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    margin-bottom: 24px;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-weight: 600;
+}
+input, select, button {
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-size: 1rem;
+}
+button {
+    margin-top: 16px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+}
+button:hover { opacity: 0.9; }
+.message {
+    padding: 12px 14px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+.message.success { background: #dcfce7; color: var(--success); }
+.message.error { background: #fee2e2; color: var(--error); }
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+}
+.card.full { border: 2px solid var(--error); }
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+th { background: #f3f4f6; }
+@media (max-width: 768px) {
+    .grid, .cards { grid-template-columns: 1fr; }
+    .topbar { flex-direction: column; gap: 8px; }
+}
